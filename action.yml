@@ -7,7 +7,7 @@ inputs:
   to_ref:
     description: git ref wrom which one we will create new ref
     required: true
-  token:
+  github-token:
     description: GitHub token with write access to repo
     required: true
 runs:
@@ -17,7 +17,7 @@ runs:
       name: Set version
       id: version
       with:
-        github-token: ${{ inputs.token }}
+        github-token: ${{ inputs.github-token }}
         script: |
           const owner = context.repo.owner
           const repo = context.repo.repo
